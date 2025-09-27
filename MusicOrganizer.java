@@ -40,6 +40,18 @@ public class MusicOrganizer
         return files.size();
     }
     
+    //question 25
+    public void listMatching(String searchString) {
+    for (String filename : files) {
+        if (filename.contains(searchString)) {
+            System.out.println(filename);
+        }
+    }
+    }
+    
+    
+    
+    
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -61,6 +73,17 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
+    
+    //Question 24
+    
+    public void listWithIndex(){
+       for(int i=0;i<files.size();i++){
+           System.out.println(i + ": " + files.get(i));
+       }
+    }
+    
+    
+    
     
     /**
      * Remove a file from the collection.
