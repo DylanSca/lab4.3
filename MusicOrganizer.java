@@ -41,11 +41,18 @@ public class MusicOrganizer
     }
     
     //question 25
-    public void listMatching(String searchString) {
+    //question 26
+    public void listMatching(String searchString){
+        boolean found = false;
     for (String filename : files) {
-        if (filename.contains(searchString)) {
+        if (filename.contains(searchString)){
+            //A match
             System.out.println(filename);
+            found= true;
         }
+    }
+    if (!found) {
+        System.out.println("No files matched: " + searchString);
     }
     }
     
@@ -108,7 +115,26 @@ public class MusicOrganizer
             player.startPlaying(filename);
         }
     }
-
+    
+    
+    public void playSamplesBy(String artist) {
+    boolean found = false; 
+    for (String filename : files) {
+        if (filename.contains(artist)) {
+            System.out.println("Playing sample: " + filename);
+            player.playSample(filename);
+            found = true;
+        }
+    }
+    if (!found) {
+        System.out.println("No tracks by the artist: " + artist);
+    }
+    }
+    
+    
+    
+    
+    
     /**
      * Stop the player.
      */
